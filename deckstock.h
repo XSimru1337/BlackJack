@@ -13,13 +13,22 @@
 class DeckStock
 {
 private:
-    void fillDeckStock();
     QList<Card*> deckStock;
+    QList<Card*> shuffledDeckStock;
+
+    void fillDeckStock();
     void qDebugDeckStock();
     void qDebugDeckStockSize();
+
+    void qDebugshuffledDeckStock();
+    void qDebugshuffledDeckStockSize();
+
 public:
-    DeckStock();
+    QList<Card*> getShuffledDeckStock();
+
     void shuffleDeckStock();
+
+    DeckStock();
 };
 
 #endif // DECKSTOCK_H
