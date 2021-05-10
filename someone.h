@@ -11,6 +11,9 @@ class Someone
 private:
     QList<Card*> hand;
 public:
+    QList<Card*> getHand();
+    void calcHandSum();
+    void hitCard();
     Someone();
 };
 

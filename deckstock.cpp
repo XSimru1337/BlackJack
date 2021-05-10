@@ -27,6 +27,11 @@ void DeckStock::shuffleDeckStock()
     }
 }
 
+Card* DeckStock::popCard()
+{
+    return deckStock.takeLast();
+}
+
 DeckStock::DeckStock()
 {
     srand(time(NULL));

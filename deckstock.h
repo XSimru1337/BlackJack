@@ -20,9 +20,10 @@ private:
     void qDebugDeckStockSize();
 
 public:
-    QList<Card*> getShuffledDeckStock();
+    QList<Card*> getDeckStock();
 
-    void shuffleDeckStock();
+    void        shuffleDeckStock();
+    Card*       popCard();
 
     DeckStock();
 };
