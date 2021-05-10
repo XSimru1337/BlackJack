@@ -31,14 +31,14 @@ void DeckStock::shuffleDeckStock()
         }
     }
 }
-void DeckStock::qDebugshuffledDeckStock()
+void DeckStock::qDebugShuffledDeckStock()
 {
     for(int i = 0; i < shuffledDeckStock.size(); i++) {
         qDebug() << shuffledDeckStock[i]->getColorID() << shuffledDeckStock[i]->getSymbol();
     }
 }
 
-void DeckStock::qDebugshuffledDeckStockSize()
+void DeckStock::qDebugShuffledDeckStockSize()
 {
     qDebug() << shuffledDeckStock.size();
 }
@@ -52,6 +52,6 @@ DeckStock::DeckStock()
 {
     fillDeckStock();
     shuffleDeckStock();
-    qDebugDeckStock();
-    qDebugDeckStockSize();
+    qDebugShuffledDeckStock();
+    qDebugShuffledDeckStockSize();
 }

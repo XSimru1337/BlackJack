@@ -20,8 +20,8 @@ private:
     void qDebugDeckStock();
     void qDebugDeckStockSize();
 
-    void qDebugshuffledDeckStock();
-    void qDebugshuffledDeckStockSize();
+    void qDebugShuffledDeckStock();
+    void qDebugShuffledDeckStockSize();
 
 public:
     QList<Card*> getShuffledDeckStock();
