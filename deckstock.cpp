@@ -2,16 +2,14 @@
 
 void DeckStock::fillDeckStock()
 {
-    for(int i = 0; i < DECK_COUNT; i++) {
+    for(int i = 0; i < DECK_COUNT; i++)
         deckStock << Deck().getDeck();
-    }
 }
 
 void DeckStock::qDebugDeckStock()
 {
-    for(int i = 0; i < deckStock.count(); i++) {
-        qDebug() << deckStock[i]->getColorID() << deckStock[i]->getSymbol();
-    }
+    for(int i = 0; i < deckStock.size(); i++)
+        qDebug() << deckStock[i]->getColor() << deckStock[i]->getSymbol();
 }
 
 void DeckStock::qDebugDeckStockSize()
@@ -21,37 +19,20 @@ void DeckStock::qDebugDeckStockSize()
 
 void DeckStock::shuffleDeckStock()
 {
-    srand(time(NULL));
-
-    while(shuffledDeckStock.size()< DECK_COUNT*52) {
-        for(int i = 0; i < deckStock.size(); i++) {
-            int tmpCrdPos = i + rand() % (deckStock.size()-i);
-            shuffledDeckStock << deckStock[tmpCrdPos];
-            deckStock.removeAt(tmpCrdPos);
-        }
+    QList<Card*> tmpDeckStock = deckStock;
+    for(int i = 0; i < DECK_COUNT*52; i++) {
+        int tmpCrdPos = rand() % (tmpDeckStock.size());
+        deckStock[i] = tmpDeckStock[tmpCrdPos];
+        tmpDeckStock.removeAt(tmpCrdPos);
     }
-}
-void DeckStock::qDebugShuffledDeckStock()
-{
-    for(int i = 0; i < shuffledDeckStock.size(); i++) {
-        qDebug() << shuffledDeckStock[i]->getColorID() << shuffledDeckStock[i]->getSymbol();
-    }
-}
-
-void DeckStock::qDebugShuffledDeckStockSize()
-{
-    qDebug() << shuffledDeckStock.size();
-}
-
-QList<Card *> DeckStock::getShuffledDeckStock()
-{
-    return shuffledDeckStock;
 }
 
 DeckStock::DeckStock()
 {
+    srand(time(NULL));
+
     fillDeckStock();
     shuffleDeckStock();
-    qDebugShuffledDeckStock();
-    qDebugShuffledDeckStockSize();
+    qDebugDeckStock();
+    qDebugDeckStockSize();
 }

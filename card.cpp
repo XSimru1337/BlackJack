@@ -5,17 +5,17 @@ QString Card::getSymbol()
     return symbol;
 }
 
-int Card::getColorID()
+int Card::getColor()
 {
-    return colorID;
+    return color;
 }
 
 Card::Card()
 {
 }
 
-Card::Card(color colorID, QString symbol)
+Card::Card(int color, QString symbol)
 {
-    this->colorID = colorID;
+    this->color = color;
     this->symbol = symbol;
 }

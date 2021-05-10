@@ -8,13 +8,13 @@
 class Card
 {
 private:
-    int         colorID;
-    QString     symbol;
+    int         color; // PIG KARO HERZ KREUZ
+    QString     symbol;  //
 public:
-    QString getSymbol();
-    int getColorID();
+    QString     getSymbol();
+    int         getColor();
     Card();
-    Card(color color, QString symbol);
+    Card(int color, QString symbol);
 };
 
 #endif // CARD_H

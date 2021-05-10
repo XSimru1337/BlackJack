@@ -14,14 +14,10 @@ class DeckStock
 {
 private:
     QList<Card*> deckStock;
-    QList<Card*> shuffledDeckStock;
 
     void fillDeckStock();
     void qDebugDeckStock();
     void qDebugDeckStockSize();
-
-    void qDebugShuffledDeckStock();
-    void qDebugShuffledDeckStockSize();
 
 public:
     QList<Card*> getShuffledDeckStock();

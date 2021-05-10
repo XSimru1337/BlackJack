@@ -1,5 +1,5 @@
 #include "someone.h"
 
-someone::someone()
+Someone::Someone()
 {
 }

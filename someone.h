@@ -6,12 +6,12 @@
 
 #include <QObject>
 
-class someone
+class Someone
 {
 private:
     QList<Card*> hand;
 public:
-    someone();
+    Someone();
 };
 
 #endif // SOMEONE_H
