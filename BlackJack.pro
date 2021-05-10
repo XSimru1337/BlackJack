@@ -12,7 +12,8 @@ SOURCES += \
         card.cpp \
         deck.cpp \
         deckstock.cpp \
-        main.cpp
+        main.cpp \
+        someone.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -23,5 +24,6 @@ HEADERS += \
     card.h \
     config.h \
     deck.h \
-    deckstock.h
+    deckstock.h \
+    someone.h
 
