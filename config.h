@@ -1,6 +1,9 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
+
+#define DECK_COUNT 8
+
 #include <QList>
 
 enum color {

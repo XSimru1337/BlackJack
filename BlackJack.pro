@@ -11,6 +11,7 @@ CONFIG -= app_bundle
 SOURCES += \
         card.cpp \
         deck.cpp \
+        deckstock.cpp \
         main.cpp
 
 # Default rules for deployment.
@@ -21,5 +22,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     card.h \
     config.h \
-    deck.h
+    deck.h \
+    deckstock.h
 
