@@ -3,6 +3,7 @@
 
 #include "card.h"
 #include "deckstock.h"
+#include "config.h"
 
 #include <QObject>
 
@@ -14,7 +15,9 @@ private:
 
 public:
     QList<Card*> getHand();
-    void calcHandSum();
+    int calcHandSum();
+    int calcSumWithAss(int sum);
+    int calcAssCount();
     void hitCard();
     Someone();
 };
