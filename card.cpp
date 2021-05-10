@@ -12,5 +12,10 @@ int Card::getColorID()
 
 Card::Card()
 {
+}
 
+Card::Card(color colorID, QString symbol)
+{
+    this->colorID = colorID;
+    this->symbol = symbol;
 }
