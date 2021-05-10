@@ -13,6 +13,7 @@ private:
 public:
     QString     getSymbol();
     int         getColor();
+
     Card();
     Card(int color, QString symbol);
 };

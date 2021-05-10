@@ -12,6 +12,7 @@ int Card::getColor()
 
 Card::Card()
 {
+
 }
 
 Card::Card(int color, QString symbol)

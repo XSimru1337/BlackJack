@@ -10,6 +10,8 @@ class Someone
 {
 private:
     QList<Card*> hand;
+    DeckStock *deckStock;
+
 public:
     QList<Card*> getHand();
     void calcHandSum();

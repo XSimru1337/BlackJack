@@ -1,43 +1,50 @@
 #include "deckstock.h"
 
+DeckStock *DeckStock::deckStock = nullptr;
+
+DeckStock *DeckStock::get(){
+    if(!deckStock)
+        deckStock = new DeckStock();
+    return deckStock;
+}
+
 void DeckStock::fillDeckStock()
 {
     for(int i = 0; i < DECK_COUNT; i++)
-        deckStock << Deck().getDeck();
+        deckStockList << Deck().getDeck();
 }
 
 void DeckStock::qDebugDeckStock()
 {
-    for(int i = 0; i < deckStock.size(); i++)
-        qDebug() << deckStock[i]->getColor() << deckStock[i]->getSymbol();
+    for(int i = 0; i < deckStockList.size(); i++)
+        qDebug() << deckStockList[i]->getColor() << deckStockList[i]->getSymbol();
 }
 
 void DeckStock::qDebugDeckStockSize()
 {
-    qDebug() << deckStock.size();
+    qDebug() << deckStockList.size();
 }
 
 void DeckStock::shuffleDeckStock()
 {
-    QList<Card*> tmpDeckStock = deckStock;
+    QList<Card*> tmpDeckStock = deckStockList;
     for(int i = 0; i < DECK_COUNT*52; i++) {
         int tmpCrdPos = rand() % (tmpDeckStock.size());
-        deckStock[i] = tmpDeckStock[tmpCrdPos];
+        deckStockList[i] = tmpDeckStock[tmpCrdPos];
         tmpDeckStock.removeAt(tmpCrdPos);
     }
 }
 
 Card* DeckStock::popCard()
 {
-    return deckStock.takeLast();
+    return deckStockList.takeLast();
 }
 
-DeckStock::DeckStock()
+DeckStock::DeckStock(QObject *parent)
 {
     srand(time(NULL));
 
     fillDeckStock();
     shuffleDeckStock();
-    qDebugDeckStock();
     qDebugDeckStockSize();
 }

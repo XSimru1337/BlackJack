@@ -10,22 +10,24 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-class DeckStock
+class DeckStock : public QObject
 {
 private:
-    QList<Card*> deckStock;
+    DeckStock( QObject *parent = 0 );
+
+    QList<Card*> deckStockList;
+    static DeckStock *deckStock;
 
     void fillDeckStock();
     void qDebugDeckStock();
     void qDebugDeckStockSize();
 
 public:
+    static DeckStock *get();
     QList<Card*> getDeckStock();
 
     void        shuffleDeckStock();
     Card*       popCard();
-
-    DeckStock();
 };
 
 #endif // DECKSTOCK_H
