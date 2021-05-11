@@ -11,34 +11,28 @@ int Someone::calcHandSum()
     for(Card* element: hand)
         if(element->getSymbol() != "A")
             sum += getCardValueBySymbole(element->getSymbol());
-
     sum = calcSumWithAss(sum);
-    qDebug() << "Sum: " << sum << Qt::endl;
+    //qDebug() << "Sum: " << sum << Qt::endl;
     return sum;
 }
 
 void Someone::hitCard()
 {
     hand << deckStock->popCard();
-    qDebug() << "Hit: " << hand.last()->getSymbol() << Qt::endl;
+    //qDebug() << "Hit: " << hand.last()->getSymbol() << Qt::endl;
 }
 
 Someone::Someone()
 {
     deckStock = DeckStock::get();
-
-    hitCard();
-    hitCard();
-    calcHandSum();
 }
 
 int Someone::calcAssCount()
 {
     int count = 0;
-    for(Card* element: hand) {
+    for(Card* element: hand)
         if(element->getSymbol() == "A")
             count ++;
-    }
     return count;
 }
 

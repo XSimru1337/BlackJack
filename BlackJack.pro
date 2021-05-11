@@ -10,9 +10,12 @@ CONFIG -= app_bundle
 
 SOURCES += \
         card.cpp \
+        dealer.cpp \
         deck.cpp \
         deckstock.cpp \
+        game.cpp \
         main.cpp \
+        player.cpp \
         someone.cpp
 
 # Default rules for deployment.
@@ -23,7 +26,10 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     card.h \
     config.h \
+    dealer.h \
     deck.h \
     deckstock.h \
+    game.h \
+    player.h \
     someone.h
 

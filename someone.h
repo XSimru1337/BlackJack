@@ -10,14 +10,17 @@
 class Someone
 {
 private:
-    QList<Card*> hand;
     DeckStock *deckStock;
+
+    QList<Card*> hand;
 
 public:
     QList<Card*> getHand();
+
     int calcHandSum();
     int calcSumWithAss(int sum);
     int calcAssCount();
+
     void hitCard();
     Someone();
 };
