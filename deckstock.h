@@ -13,7 +13,7 @@
 class DeckStock : public QObject
 {
 private:
-    DeckStock( QObject *parent = 0 );
+    DeckStock(QObject *parent = 0);
 
     QList<Card*> deckStockList;
     static DeckStock *deckStock;

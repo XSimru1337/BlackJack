@@ -1,11 +1,12 @@
 #ifndef DEALER_H
 #define DEALER_H
 
+#include "someone.h"
 
-class Dealer
+class Dealer : public Someone
 {
 public:
-    Dealer();
+    Dealer(Someone *parent = 0);
 };
 
 #endif // DEALER_H

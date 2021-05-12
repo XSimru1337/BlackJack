@@ -46,5 +46,4 @@ DeckStock::DeckStock(QObject *parent)
 
     fillDeckStock();
     shuffleDeckStock();
-    qDebugDeckStockSize();
 }

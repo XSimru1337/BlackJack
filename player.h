@@ -1,11 +1,12 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
+#include "someone.h"
 
-class Player
+class Player : public Someone
 {
 public:
-    Player();
+    Player(Someone *parent = 0 );
 };
 
 #endif // PLAYER_H

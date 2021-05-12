@@ -3,6 +3,7 @@
 
 
 #define DECK_COUNT 8
+#define PLAYER_COUNT 2
 
 #include <QList>
 #include <QString>

@@ -12,14 +12,12 @@ int Someone::calcHandSum()
         if(element->getSymbol() != "A")
             sum += getCardValueBySymbole(element->getSymbol());
     sum = calcSumWithAss(sum);
-    //qDebug() << "Sum: " << sum << Qt::endl;
     return sum;
 }
 
 void Someone::hitCard()
 {
     hand << deckStock->popCard();
-    //qDebug() << "Hit: " << hand.last()->getSymbol() << Qt::endl;
 }
 
 Someone::Someone()
