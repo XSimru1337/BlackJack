@@ -2,10 +2,12 @@
 
 void Game::firstCardDeal()
 {
-    for(int i = 0; i < 2; i++)
+    for(int i = 0; i < 2; i++) {
         for(int playerIndex = 0; playerIndex < players.size(); playerIndex++) {
             players[i]->hitCard();
         }
+        dealer.hitCard();
+    }
 
 }
 
@@ -25,6 +27,13 @@ void Game::qDebugAllPlayerHands()
         tmpHndString += " -> " + QString::number(players[playerIndex]->calcHandSum());
         qDebug() << tmpHndString;
     }
+
+    QString tmpHndString = "D ";
+    for(int cardIndex = 0; cardIndex < dealer.getHand().size(); cardIndex++) {
+        tmpHndString += "[" + dealer.getHand()[cardIndex]->getSymbol() + "] ";
+    }
+    tmpHndString += " -> " + QString::number(dealer.calcHandSum());
+    qDebug() << tmpHndString;
 }
 
 Game::Game()

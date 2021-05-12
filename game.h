@@ -16,7 +16,7 @@ class Game
 {
 private:
     QList<Player*> players;
-    Dealer *dealer;
+    Dealer dealer = new Player(new Someone());;
     void firstCardDeal();
     void fillPlayerList();
     void qDebugAllPlayerHands();
