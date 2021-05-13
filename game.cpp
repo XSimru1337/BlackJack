@@ -41,4 +41,9 @@ Game::Game()
     fillPlayerList();
     firstCardDeal();
     qDebugAllPlayerHands();
+
+    while (true) {
+        int keyValue = key.trackKeys();
+        if(keyValue != 0)qDebug() << keyValue;
+    }
 }

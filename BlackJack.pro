@@ -14,6 +14,7 @@ SOURCES += \
         deck.cpp \
         deckstock.cpp \
         game.cpp \
+        key.cpp \
         main.cpp \
         player.cpp \
         someone.cpp
@@ -30,6 +31,7 @@ HEADERS += \
     deck.h \
     deckstock.h \
     game.h \
+    key.h \
     player.h \
     someone.h
 

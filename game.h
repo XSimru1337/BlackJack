@@ -6,6 +6,7 @@
 #include "player.h"
 #include "someone.h"
 #include "dealer.h"
+#include "key.h"
 
 #include <QList>
 #include <iostream>
@@ -16,7 +17,9 @@ class Game
 {
 private:
     QList<Player*> players;
-    Dealer dealer = new Player(new Someone());;
+    Dealer dealer = new Player(new Someone());
+    Key key;
+
     void firstCardDeal();
     void fillPlayerList();
     void qDebugAllPlayerHands();
