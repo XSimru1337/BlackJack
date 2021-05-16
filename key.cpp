@@ -6,16 +6,17 @@ SHORT GetAsyncKeyState(
 
 int Key::trackKeys()
 {
-    if(isKeyPressed(Qt::Key_1) && !pressed) {
-        key_1 = pressed ? false : true;
+    if(GetAsyncKeyState(VK_RETURN)) return maybeReturnPressedKey(VK_RETURN);
+    else if(GetAsyncKeyState(Qt::Key_Space)) return maybeReturnPressedKey(Qt::Key_Space);
+    else pressed = false;
+    return 0;
+}
+
+int Key::maybeReturnPressedKey(int key)
+{
+    if(!pressed) {
         pressed = true;
-        return Qt::Key_1;
-    } else if(isKeyPressed(Qt::Key_2) && !pressed) {
-        key_2 = pressed ? false : true;
-        pressed = true;
-        return Qt::Key_2;
-    } else if(!isKeyPressed(Qt::Key_1) && !isKeyPressed(Qt::Key_2)) {
-        pressed = false;
+        return key;
     }
     return 0;
 }
@@ -23,9 +24,4 @@ int Key::trackKeys()
 Key::Key()
 {
 
-}
-
-bool Key::isKeyPressed(int key)
-{
-    return GetAsyncKeyState(key);
 }
