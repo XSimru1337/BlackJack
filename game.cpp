@@ -36,6 +36,17 @@ void Game::qDebugAllPlayerHands()
     qDebug() << tmpHndString;
 }
 
+void Game::inputController(int key)
+{
+    switch (key) {
+        case 0: /* Nothing */ break;
+        case VK_RETURN: qDebug()     << "Return"; break;
+        case Qt::Key_Space: qDebug() << "Space"; break;
+        case Qt::Key_S: qDebug()     << "S"; break;
+        case Qt::Key_D: qDebug()     << "D"; break;
+    }
+}
+
 Game::Game()
 {
     fillPlayerList();
@@ -43,7 +54,6 @@ Game::Game()
     qDebugAllPlayerHands();
 
     while (true) {
-        int keyValue = key.trackKeys();
-        if(keyValue != 0)qDebug() << keyValue;
+        inputController(key.trackKeys());
     }
 }

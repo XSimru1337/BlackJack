@@ -23,6 +23,7 @@ private:
     void firstCardDeal();
     void fillPlayerList();
     void qDebugAllPlayerHands();
+    void inputController(int key);
 public:
     Game();
 };
