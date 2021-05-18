@@ -5,13 +5,18 @@ QList<Card *> Someone::getHand()
     return hand;
 }
 
+void Someone::resetHand()
+{
+    hand.clear();
+}
+
 int Someone::calcHandSum()
 {
     int sum = 0;
-    for(Card* element: hand)
-        if(element->getSymbol() != "A")
-            sum += getCardValueBySymbole(element->getSymbol());
-    sum = calcSumWithAss(sum);
+    for(int i = 0; i < hand.size(); i++)
+        if(hand[i]->getSymbol() != "A")
+            sum += getCardValueBySymbole(hand[i]->getSymbol());
+    sum = calcSumWithAce(sum);
     return sum;
 }
 
@@ -20,12 +25,20 @@ void Someone::hitCard()
     hand << deckStock->popCard();
 }
 
+QString Someone::getDebugHandString()
+{
+    QString tmpHandDebugString;
+    for(int i = 0; i < hand.size(); i++)
+        tmpHandDebugString += "[" + hand[i]->getSymbol() + "]";
+    return tmpHandDebugString;
+}
+
 Someone::Someone()
 {
     deckStock = DeckStock::get();
 }
 
-int Someone::calcAssCount()
+int Someone::calcAceCount()
 {
     int count = 0;
     for(Card* element: hand)
@@ -34,9 +47,9 @@ int Someone::calcAssCount()
     return count;
 }
 
-int Someone::calcSumWithAss(int sum)
+int Someone::calcSumWithAce(int sum)
 {
-    int assCount = calcAssCount();
+    int assCount = calcAceCount();
     for(int i = 0; i < assCount; i++) {
         if(sum + 11*(assCount-i) <= 21) return sum + 11;
         else sum+= 1;

@@ -16,14 +16,23 @@ using namespace std;
 class Game
 {
 private:
+    DeckStock *deckStock;
     QList<Player*> players;
     Dealer dealer = new Player(new Someone());
     Key key;
+
+    int currentPlayerIndex = 0;
 
     void firstCardDeal();
     void fillPlayerList();
     void qDebugAllPlayerHands();
     void inputController(int key);
+    void resetHands();
+
+    bool isHittable(int input);
+
+    void playerInputLoop();
+
 public:
     Game();
 };

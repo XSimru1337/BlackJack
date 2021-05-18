@@ -13,6 +13,7 @@ public:
     Key();
 
     int trackKeys();
+    int waitForKeyInput();
     int maybeReturnPressedKey(int key);
 };
 

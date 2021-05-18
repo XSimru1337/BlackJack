@@ -17,17 +17,19 @@ private:
 
     QList<Card*> deckStockList;
     static DeckStock *deckStock;
-
-    void fillDeckStock();
-    void qDebugDeckStock();
-    void qDebugDeckStockSize();
+    DeckStock*  refresh() { return deckStock = new DeckStock(); }
 
 public:
     static DeckStock *get();
     QList<Card*> getDeckStock();
 
+    void        fillDeckStock();
     void        shuffleDeckStock();
+    void        maybeRefreshDeckStock();
     Card*       popCard();
+
+    void qDebugDeckStock();
+    void qDebugDeckStockSize();
 };
 
 #endif // DECKSTOCK_H

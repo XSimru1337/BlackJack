@@ -16,12 +16,14 @@ private:
 
 public:
     QList<Card*> getHand();
+    void resetHand();
 
     int calcHandSum();
-    int calcSumWithAss(int sum);
-    int calcAssCount();
+    int calcSumWithAce(int sum);
+    int calcAceCount();
 
     void hitCard();
+    QString getDebugHandString();
     Someone();
 };
 

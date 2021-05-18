@@ -23,6 +23,15 @@ int Key::maybeReturnPressedKey(int key)
     return 0;
 }
 
+int Key::waitForKeyInput()
+{
+    int keyInput = 0;
+    while(!keyInput) {
+        keyInput = trackKeys();
+    }
+    return keyInput;
+}
+
 Key::Key()
 {
 

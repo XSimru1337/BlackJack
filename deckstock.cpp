@@ -47,3 +47,9 @@ DeckStock::DeckStock(QObject *parent)
     fillDeckStock();
     shuffleDeckStock();
 }
+
+void DeckStock::maybeRefreshDeckStock()
+{
+    if(deckStockList.size() <= 52*DECK_COUNT/2)
+        deckStock = refresh();
+}

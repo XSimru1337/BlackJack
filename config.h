@@ -4,6 +4,7 @@
 
 #define DECK_COUNT 8
 #define PLAYER_COUNT 2
+#define HIT_SOFT_SEVENTEEN true
 
 #include <QList>
 #include <QString>
